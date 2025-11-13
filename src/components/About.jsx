@@ -1,13 +1,42 @@
 import React from 'react';
-import { FaGraduationCap, FaCode, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaHtml5, FaCss3Alt, FaJsSquare,
-  FaLinux, FaComments, FaBrain, FaRegLightbulb, FaClock, FaTrophy, FaStar, FaUsers, FaLaptopCode } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiCplusplus, SiPostman, SiLeetcode, SiCodeforces, SiCodechef } from 'react-icons/si';
-import { SiVisualstudiocode } from 'react-icons/si'; 
-import { FaGit } from 'react-icons/fa';
+import {
+  FaGraduationCap,
+  FaCode,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaGithub,
+  FaHtml5,
+  FaCss3Alt,
+  FaJsSquare,
+  FaLinux, // Linux icon added
+  FaComments,
+  FaBrain,
+  FaRegLightbulb,
+  FaClock,
+  FaTrophy,
+  FaStar,
+  FaUsers,
+  FaLaptopCode,
+  FaRobot // For ChatGPT representation
+} from 'react-icons/fa';
+
+import {
+  SiMongodb,
+  SiExpress,
+  SiCplusplus,
+  SiPostman,
+  SiLeetcode,
+  SiCodeforces,
+  SiCodechef,
+  SiMysql,  // MySQL icon
+  SiFirebase // Firebase icon
+} from 'react-icons/si';
 
 import ProfileCard from './ProfileCard';
 
-const SkillIcon = ({ icon, name, bgColor, hoverColor }) => (
+// SkillIcon component
+const SkillIcon = ({ icon, name, bgColor = 'bg-white/30', hoverColor = 'hover:bg-gray-200' }) => (
   <div
     className={`flex flex-col items-center p-4 shadow-md rounded-lg transition-all duration-300 ${bgColor} ${hoverColor} relative`}
   >
@@ -43,23 +72,44 @@ const About = () => {
           </div>
         </section>
 
-        <section className="mb-12">
+       <section className="mb-12">
   <h3 className="text-3xl font-bold text-center mb-8 flex items-center justify-center text-black">
     <FaCode className="mr-3 text-blue-500" /> Professional Skills
   </h3>
+
   <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
-    <SkillIcon icon={<SiCplusplus className="text-blue-500" />} name="C++" bgColor="bg-white/30" hoverColor="hover:bg-blue-500" />
-    <SkillIcon icon={<FaHtml5 className="text-orange-500" />} name="HTML5" bgColor="bg-white/30" hoverColor="hover:bg-orange-500" />
-    <SkillIcon icon={<FaCss3Alt className="text-blue-600" />} name="CSS3" bgColor="bg-white/30" hoverColor="hover:bg-blue-600" />
-    <SkillIcon icon={<FaJsSquare className="text-yellow-500" />} name="JavaScript" bgColor="bg-white/30" hoverColor="hover:bg-yellow-500" />
-    <SkillIcon icon={<FaReact className="text-cyan-400" />} name="React" bgColor="bg-white/30" hoverColor="hover:bg-cyan-400" />
-    <SkillIcon icon={<FaNodeJs className="text-green-500" />} name="Node.js" bgColor="bg-white/30" hoverColor="hover:bg-green-500" />
-    <SkillIcon icon={<SiExpress className="text-gray-400" />} name="Express" bgColor="bg-white/30" hoverColor="hover:bg-gray-400" />
-    <SkillIcon icon={<SiMongodb className="text-green-600" />} name="MongoDB" bgColor="bg-white/30" hoverColor="hover:bg-green-600" />
-    <SkillIcon icon={<FaGit className="text-orange-500" />} name="Git" bgColor="bg-white/30" hoverColor="hover:bg-orange-500" />
-    <SkillIcon icon={<FaGithub className="text-gray-800" />} name="GitHub" bgColor="bg-white/30" hoverColor="hover:bg-gray-800" />
-    <SkillIcon icon={<SiPostman className="text-orange-500" />} name="Postman" bgColor="bg-white/30" hoverColor="hover:bg-orange-500" />
-    <SkillIcon icon={<SiVisualstudiocode className="text-blue-600" />} name="VS Code" bgColor="bg-white/30" hoverColor="hover:bg-blue-600" />
+    <SkillIcon icon={<SiCplusplus className="text-blue-500" />} name="C++" bgColor="bg-white/30" hoverColor="hover:bg-blue-200" />
+    <SkillIcon icon={<FaHtml5 className="text-orange-500" />} name="HTML5" bgColor="bg-white/30" hoverColor="hover:bg-orange-200" />
+    <SkillIcon icon={<FaCss3Alt className="text-blue-600" />} name="CSS3" bgColor="bg-white/30" hoverColor="hover:bg-blue-200" />
+    <SkillIcon icon={<FaJsSquare className="text-yellow-500" />} name="JavaScript" bgColor="bg-white/30" hoverColor="hover:bg-yellow-200" />
+    <SkillIcon icon={<FaReact className="text-cyan-400" />} name="React" bgColor="bg-white/30" hoverColor="hover:bg-cyan-200" />
+    <SkillIcon icon={<FaNodeJs className="text-green-500" />} name="Node.js" bgColor="bg-white/30" hoverColor="hover:bg-green-200" />
+    <SkillIcon icon={<SiExpress className="text-gray-400" />} name="Express" bgColor="bg-white/30" hoverColor="hover:bg-gray-200" />
+    <SkillIcon icon={<SiMongodb className="text-green-600" />} name="MongoDB" bgColor="bg-white/30" hoverColor="hover:bg-green-200" />
+    <SkillIcon icon={<FaGitAlt className="text-orange-500" />} name="Git" bgColor="bg-white/30" hoverColor="hover:bg-orange-200" />
+    <SkillIcon icon={<FaGithub className="text-gray-800" />} name="GitHub" bgColor="bg-white/30" hoverColor="hover:bg-gray-300" />
+    <SkillIcon icon={<SiPostman className="text-orange-500" />} name="Postman" bgColor="bg-white/30" hoverColor="hover:bg-orange-200" />
+    <SkillIcon
+      icon={
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 128 128"
+          className="h-8 w-8"
+          aria-hidden="true"
+        >
+          <defs />
+          <path fill="currentColor" d="M5 24 L60 64 5 104z" opacity="0.12" />
+          <path fill="currentColor" d="M10 20 L80 64 10 108 L10 20z" />
+        </svg>
+      }
+      name="VS Code"
+      bgColor="bg-white/30"
+      hoverColor="hover:bg-blue-200"
+    />
+    <SkillIcon icon={<SiMysql className="text-blue-500" />} name="SQL (MySQL)" bgColor="bg-white/30" hoverColor="hover:bg-blue-200" />
+    <SkillIcon icon={<FaRobot className="text-purple-500" />} name="ChatGPT" bgColor="bg-white/30" hoverColor="hover:bg-purple-200" />
+    <SkillIcon icon={<SiFirebase className="text-yellow-500" />} name="Firebase" bgColor="bg-white/30" hoverColor="hover:bg-yellow-200" />
+    <SkillIcon icon={<FaLinux className="text-black" />} name="Linux" bgColor="bg-white/30" hoverColor="hover:bg-gray-200" />
   </div>
 </section>
 
@@ -112,31 +162,6 @@ const About = () => {
             <SkillIcon icon={<FaBrain />} name="Critical Thinking" bgColor="bg-green-500" hoverColor="hover:bg-green-600" />
             <SkillIcon icon={<FaRegLightbulb />} name="Problem Solving" bgColor="bg-yellow-500" hoverColor="hover:bg-yellow-600" />
             <SkillIcon icon={<FaClock />} name="Time Management" bgColor="bg-purple-500" hoverColor="hover:bg-purple-600" />
-          </div>
-        </section>
-
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="p-6 bg-beige-100 backdrop-blur-sm rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-            <h3 className="text-3xl font-bold text-center mb-8 text-black flex items-center justify-center">
-              <FaTrophy className="mr-3 text-yellow-400" /> Achievements
-            </h3>
-            <ul className="list-disc list-inside space-y-2 text-black">
-              <li>Top Performer in Graph contest (Algo University)</li>
-              <li>Top 10 in Innodev development event (MNNIT Tech fest)</li>
-              <li>Adobe Hackathon Top Performer</li>
-            </ul>
-          </div>
-
-          <div className="p-6 bg-beige-100 backdrop-blur-sm rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-            <h3 className="text-3xl font-bold text-center mb-8 text-black flex items-center justify-center">
-              <FaUsers className="mr-3 text-blue-500" /> Responsibilities
-            </h3>
-            <ul className="list-disc list-inside space-y-2 text-black">
-              <li>Design Team Member (Culrav & Avishkar, MNNIT)</li>
-              <li>PR Team Member (Culrav & Avishkar, MNNIT)</li>
-              <li>Media Team Member (Culrav & Avishkar)</li>
-              <li>Coordinator, Western Dance Committee</li>
-            </ul>
           </div>
         </section>
       </div>
