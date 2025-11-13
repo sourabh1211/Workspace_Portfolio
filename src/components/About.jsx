@@ -2,6 +2,8 @@ import React from 'react';
 import { FaGraduationCap, FaCode, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaHtml5, FaCss3Alt, FaJsSquare,
   FaLinux, FaComments, FaBrain, FaRegLightbulb, FaClock, FaTrophy, FaStar, FaUsers, FaLaptopCode } from 'react-icons/fa';
 import { SiMongodb, SiExpress, SiCplusplus, SiPostman, SiLeetcode, SiCodeforces, SiCodechef } from 'react-icons/si';
+import { SiVisualstudiocode } from 'react-icons/si'; 
+import { FaGit } from 'react-icons/fa';
 
 import ProfileCard from './ProfileCard';
 
@@ -42,20 +44,25 @@ const About = () => {
         </section>
 
         <section className="mb-12">
-          <h3 className="text-3xl font-bold text-center mb-8 flex items-center justify-center text-black">
-            <FaCode className="mr-3 text-blue-500" /> Professional Skills
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
-            <SkillIcon icon={<SiCplusplus className="text-blue-500" />} name="C++" bgColor="bg-white/30" hoverColor="hover:bg-blue-500" />
-            <SkillIcon icon={<FaHtml5 className="text-orange-500" />} name="HTML5" bgColor="bg-white/30" hoverColor="hover:bg-orange-500" />
-            <SkillIcon icon={<FaCss3Alt className="text-blue-600" />} name="CSS3" bgColor="bg-white/30" hoverColor="hover:bg-blue-600" />
-            <SkillIcon icon={<FaJsSquare className="text-yellow-500" />} name="JavaScript" bgColor="bg-white/30" hoverColor="hover:bg-yellow-500" />
-            <SkillIcon icon={<FaReact className="text-cyan-400" />} name="React" bgColor="bg-white/30" hoverColor="hover:bg-cyan-400" />
-            <SkillIcon icon={<FaNodeJs className="text-green-500" />} name="Node.js" bgColor="bg-white/30" hoverColor="hover:bg-green-500" />
-            <SkillIcon icon={<SiExpress className="text-gray-400" />} name="Express" bgColor="bg-white/30" hoverColor="hover:bg-gray-400" />
-            <SkillIcon icon={<SiMongodb className="text-green-600" />} name="MongoDB" bgColor="bg-white/30" hoverColor="hover:bg-green-600" />
-          </div>
-        </section>
+  <h3 className="text-3xl font-bold text-center mb-8 flex items-center justify-center text-black">
+    <FaCode className="mr-3 text-blue-500" /> Professional Skills
+  </h3>
+  <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
+    <SkillIcon icon={<SiCplusplus className="text-blue-500" />} name="C++" bgColor="bg-white/30" hoverColor="hover:bg-blue-500" />
+    <SkillIcon icon={<FaHtml5 className="text-orange-500" />} name="HTML5" bgColor="bg-white/30" hoverColor="hover:bg-orange-500" />
+    <SkillIcon icon={<FaCss3Alt className="text-blue-600" />} name="CSS3" bgColor="bg-white/30" hoverColor="hover:bg-blue-600" />
+    <SkillIcon icon={<FaJsSquare className="text-yellow-500" />} name="JavaScript" bgColor="bg-white/30" hoverColor="hover:bg-yellow-500" />
+    <SkillIcon icon={<FaReact className="text-cyan-400" />} name="React" bgColor="bg-white/30" hoverColor="hover:bg-cyan-400" />
+    <SkillIcon icon={<FaNodeJs className="text-green-500" />} name="Node.js" bgColor="bg-white/30" hoverColor="hover:bg-green-500" />
+    <SkillIcon icon={<SiExpress className="text-gray-400" />} name="Express" bgColor="bg-white/30" hoverColor="hover:bg-gray-400" />
+    <SkillIcon icon={<SiMongodb className="text-green-600" />} name="MongoDB" bgColor="bg-white/30" hoverColor="hover:bg-green-600" />
+    <SkillIcon icon={<FaGit className="text-orange-500" />} name="Git" bgColor="bg-white/30" hoverColor="hover:bg-orange-500" />
+    <SkillIcon icon={<FaGithub className="text-gray-800" />} name="GitHub" bgColor="bg-white/30" hoverColor="hover:bg-gray-800" />
+    <SkillIcon icon={<SiPostman className="text-orange-500" />} name="Postman" bgColor="bg-white/30" hoverColor="hover:bg-orange-500" />
+    <SkillIcon icon={<SiVisualstudiocode className="text-blue-600" />} name="VS Code" bgColor="bg-white/30" hoverColor="hover:bg-blue-600" />
+  </div>
+</section>
+
 
         <section className="mb-12">
           <h3 className="text-3xl font-bold text-center mb-8 text-black flex items-center justify-center">
