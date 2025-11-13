@@ -114,7 +114,7 @@ const About = () => {
               <FaTrophy className="mr-3 text-yellow-400" /> Achievements
             </h3>
             <ul className="list-disc list-inside space-y-2 text-black">
-              <li>Top Performer in Graph contest (Aalgo University)</li>
+              <li>Top Performer in Graph contest (Algo University)</li>
               <li>Top 10 in Innodev development event (MNNIT Tech fest)</li>
               <li>Adobe Hackathon Top Performer</li>
             </ul>
