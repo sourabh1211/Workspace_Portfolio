@@ -163,6 +163,43 @@ const About = () => {
             <SkillIcon icon={<FaClock />} name="Time Management" bgColor="bg-purple-500" hoverColor="hover:bg-purple-600" />
           </div>
         </section>
+
+        <section className="mb-12">
+  <h3 className="text-3xl font-bold text-center mb-8 text-black flex items-center justify-center">
+    <FaTrophy className="mr-3 text-yellow-500" /> Achievements & Positions
+  </h3>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {/* Achievements Card */}
+    <div className="p-6 bg-white/30 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer">
+      <h4 className="text-2xl font-bold mb-4 flex items-center">
+        <FaStar className="mr-2 text-yellow-500" /> Achievements
+      </h4>
+      <ul className="list-disc list-inside space-y-2 text-black">
+        <li>Top performer in Graph Contest conducted by Algo University</li>
+        <li>Top performer in Adobe Hackathon</li>
+        <li>Top 10 in InnoveDev Development Event in Culrav Avishkar 2024</li>
+        <li>Top rank in LeetCode biweekly and weekly contests</li>
+        <li>High rank in CodeChef contests</li>
+      </ul>
+    </div>
+
+    {/* Positions of Responsibility Card */}
+    <div className="p-6 bg-white/30 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer">
+      <h4 className="text-2xl font-bold mb-4 flex items-center">
+        <FaUsers className="mr-2 text-blue-500" /> Positions of Responsibility
+      </h4>
+      <ul className="list-disc list-inside space-y-2 text-black">
+        <li>Design Team Member - Culrav Avishkar MNNIT</li>
+        <li>PR Lead - Culrav Avishkar MNNIT</li>
+        <li>Content Team Member - Culrav Avishkar MNNIT</li>
+        <li>Media Team Member - Culrav Avishkar MNNIT</li>
+        <li>Coordinator - Western Dance Committee MNNIT</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
       </div>
     </div>
   );
