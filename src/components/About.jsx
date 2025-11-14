@@ -181,103 +181,6 @@
 
 
 import React from 'react';
-import { TypeAnimation } from 'react-type-animation';
-import { FaArrowRight } from 'react-icons/fa';
-import { Link } from 'react-scroll';
-
-// SAME STRUCTURE AS YOUR ORIGINAL HOME — only better background & styling
-export function Home() {
-  return (
-    <div
-      name="home"
-      className="relative w-full h-screen flex items-center justify-center overflow-hidden px-4"
-    >
-      {/* Animated Background (shared) */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-100 via-white to-indigo-100" />
-        <div className="absolute -top-32 -left-20 w-[500px] h-[500px] bg-sky-300/30 rounded-full blur-3xl animate-blob" />
-        <div className="absolute -bottom-32 -right-20 w-[500px] h-[500px] bg-indigo-300/30 rounded-full blur-3xl animate-blob2" />
-        <div className="absolute inset-0 opacity-30">
-          <div className="w-2 h-2 bg-black/10 rounded-full absolute top-[20%] left-[15%] animate-float" />
-          <div className="w-3 h-3 bg-black/10 rounded-full absolute top-[70%] left-[50%] animate-float2" />
-          <div className="w-2 h-2 bg-black/10 rounded-full absolute top-[40%] left-[80%] animate-float3" />
-        </div>
-      </div>
-
-      <div className="max-w-[1200px] w-full flex items-center justify-between">
-        <div className="w-1/2 text-black text-center sm:text-left sm:px-8">
-          <p className="text-xl text-gray-700">Hello</p>
-
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4 text-black">
-            I'm Sourabh Verma
-          </h1>
-
-          <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-6 flex justify-center sm:justify-start">
-            I'm a
-            <TypeAnimation
-              sequence={[
-                'Software Developer',
-                2000,
-                'Full Stack Developer',
-                2000,
-                'Open Source Contributor',
-                2000,
-              ]}
-              wrapper="span"
-              speed={50}
-              className="pl-2 text-indigo-600"
-              repeat={Infinity}
-            />
-          </h2>
-
-          <p className="text-gray-800 py-4 max-w-[700px] mx-auto text-lg sm:text-xl">
-            I am passionate about Data Structures and Algorithms, MERN Stack Web Development, and OOPs.
-            I love solving complex problems and creating efficient solutions. I enjoy contributing to open-source
-            projects and continuously learning.
-          </p>
-
-          <div>
-            <Link to="projects" smooth={true} duration={500}>
-              <button className="text-black group border-2 border-black px-6 py-3 my-2 flex items-center justify-center hover:bg-indigo-500 hover:text-white transition-all duration-300 rounded-md shadow-lg transform hover:scale-105">
-                <span className="mr-3">View My Work</span>
-                <span className="group-hover:rotate-90 duration-300">
-                  <FaArrowRight />
-                </span>
-              </button>
-            </Link>
-          </div>
-        </div>
-
-        <div className="w-1/2 flex justify-center items-center p-6">
-          <div className="relative">
-            <img
-              src="/personal.jpeg"
-              alt="Sourabh Verma"
-              className="rounded-full w-[350px] h-[350px] object-cover shadow-2xl border-4 border-white hover:scale-105 transition-all duration-500"
-            />
-
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white/80 backdrop-blur-sm border shadow-md rounded-lg px-4 py-2 text-sm">
-              ⭐ Open to Work
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <style>{`
-        @keyframes blob { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
-        .animate-blob { animation: blob 8s infinite ease-in-out; }
-        @keyframes blob2 { 0% { transform: scale(1.1); } 50% { transform: scale(0.9); } 100% { transform: scale(1.1); } }
-        .animate-blob2 { animation: blob2 9s infinite ease-in-out; }
-        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
-        .animate-float { animation: float 6s infinite ease-in-out; }
-        .animate-float2 { animation: float 7s infinite ease-in-out; }
-        .animate-float3 { animation: float 5s infinite ease-in-out; }
-      `}</style>
-    </div>
-  );
-}
-
-// ABOUT COMPONENT: Keeps your structure / content same, adds matching animated background and polish
 import {
   FaGraduationCap,
   FaCode,
@@ -293,9 +196,6 @@ import {
   FaBrain,
   FaRegLightbulb,
   FaClock,
-  FaTrophy,
-  FaStar,
-  FaUsers,
   FaLaptopCode,
   FaRobot
 } from 'react-icons/fa';
@@ -314,21 +214,32 @@ import {
 
 import ProfileCard from './ProfileCard';
 
+// Skill Icon Component
 const SkillIcon = ({ icon, name, bgColor = 'bg-white/30', hoverColor = 'hover:bg-gray-200' }) => (
-  <div className={`flex flex-col items-center p-4 shadow-md rounded-lg transition-all duration-300 ${bgColor} ${hoverColor} relative`}>
+  <div
+    className={`flex flex-col items-center p-4 shadow-md rounded-lg transition-all duration-300 ${bgColor} ${hoverColor}`}
+  >
     <span className="text-4xl mb-2 text-black">{icon}</span>
     <p className="text-black font-bold">{name}</p>
   </div>
 );
 
-export default function About() {
+const About = () => {
   return (
-    <div name="about" className="relative w-full min-h-screen py-20 px-4 bg-transparent overflow-hidden">
-      {/* shared animated background */}
+    <div name="about" className="relative w-full min-h-screen py-20 px-4 overflow-hidden">
+
+      {/* ❇ Background Matching Home.jsx */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-50 via-white to-indigo-50" />
-        <div className="absolute -top-40 -left-16 w-[520px] h-[520px] bg-sky-300/30 rounded-full blur-3xl animate-blob" />
-        <div className="absolute -bottom-40 -right-16 w-[520px] h-[520px] bg-indigo-300/30 rounded-full blur-3xl animate-blob2" />
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-100 via-white to-indigo-100" />
+
+        <div className="absolute -top-32 -left-20 w-[500px] h-[500px] bg-sky-300/30 rounded-full blur-3xl animate-blob" />
+        <div className="absolute -bottom-32 -right-20 w-[500px] h-[500px] bg-indigo-300/30 rounded-full blur-3xl animate-blob2" />
+
+        <div className="absolute inset-0 opacity-30">
+          <div className="w-2 h-2 bg-black/10 rounded-full absolute top-[20%] left-[15%] animate-float" />
+          <div className="w-3 h-3 bg-black/10 rounded-full absolute top-[70%] left-[50%] animate-float2" />
+          <div className="w-2 h-2 bg-black/10 rounded-full absolute top-[40%] left-[80%] animate-float3" />
+        </div>
       </div>
 
       <div className="max-w-[1200px] mx-auto">
@@ -336,10 +247,12 @@ export default function About() {
           <h2 className="text-4xl font-bold inline border-b-4 border-gray-600 text-black">About Me</h2>
         </div>
 
+        {/* Education */}
         <section className="mb-12">
           <h3 className="text-3xl font-bold text-center mb-8 flex items-center justify-center text-black">
             <FaGraduationCap className="mr-3 text-blue-500" /> Education
           </h3>
+
           <div className="flex justify-center">
             <div className="w-full md:w-2/3 p-6 bg-[#D5B097]/50 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer">
               <div className="flex items-center">
@@ -355,85 +268,49 @@ export default function About() {
           </div>
         </section>
 
+        {/* Professional Skills */}
         <section className="mb-12">
           <h3 className="text-3xl font-bold text-center mb-8 flex items-center justify-center text-black">
             <FaCode className="mr-3 text-blue-500" /> Professional Skills
           </h3>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
-            <SkillIcon icon={<SiCplusplus className="text-blue-500" />} name="C++" bgColor="bg-white/30" hoverColor="hover:bg-blue-200" />
-            <SkillIcon icon={<FaHtml5 className="text-orange-500" />} name="HTML5" bgColor="bg-white/30" hoverColor="hover:bg-orange-200" />
-            <SkillIcon icon={<FaCss3Alt className="text-blue-600" />} name="CSS3" bgColor="bg-white/30" hoverColor="hover:bg-blue-200" />
-            <SkillIcon icon={<FaJsSquare className="text-yellow-500" />} name="JavaScript" bgColor="bg-white/30" hoverColor="hover:bg-yellow-200" />
-            <SkillIcon icon={<FaReact className="text-cyan-400" />} name="React" bgColor="bg-white/30" hoverColor="hover:bg-cyan-200" />
-            <SkillIcon icon={<FaNodeJs className="text-green-500" />} name="Node.js" bgColor="bg-white/30" hoverColor="hover:bg-green-200" />
-            <SkillIcon icon={<SiExpress className="text-gray-400" />} name="Express" bgColor="bg-white/30" hoverColor="hover:bg-gray-200" />
-            <SkillIcon icon={<SiMongodb className="text-green-600" />} name="MongoDB" bgColor="bg-white/30" hoverColor="hover:bg-green-200" />
-            <SkillIcon icon={<FaGitAlt className="text-orange-500" />} name="Git" bgColor="bg-white/30" hoverColor="hover:bg-orange-200" />
-            <SkillIcon icon={<FaGithub className="text-gray-800" />} name="GitHub" bgColor="bg-white/30" hoverColor="hover:bg-gray-300" />
-            <SkillIcon icon={<SiPostman className="text-orange-500" />} name="Postman" bgColor="bg-white/30" hoverColor="hover:bg-orange-200" />
-            <SkillIcon
-              icon={
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" className="h-8 w-8" aria-hidden>
-                  <defs />
-                  <path fill="currentColor" d="M5 24 L60 64 5 104z" opacity="0.12" />
-                  <path fill="currentColor" d="M10 20 L80 64 10 108 L10 20z" />
-                </svg>
-              }
-              name="VS Code"
-              bgColor="bg-white/30"
-              hoverColor="hover:bg-blue-200"
-            />
-            <SkillIcon icon={<SiMysql className="text-blue-500" />} name="SQL (MySQL)" bgColor="bg-white/30" hoverColor="hover:bg-blue-200" />
-            <SkillIcon icon={<FaRobot className="text-purple-500" />} name="ChatGPT" bgColor="bg-white/30" hoverColor="hover:bg-purple-200" />
-            <SkillIcon icon={<SiFirebase className="text-yellow-500" />} name="Firebase" bgColor="bg-white/30" hoverColor="hover:bg-yellow-200" />
-            <SkillIcon icon={<FaLinux className="text-black" />} name="Linux" bgColor="bg-white/30" hoverColor="hover:bg-gray-200" />
+            <SkillIcon icon={<SiCplusplus className="text-blue-500" />} name="C++" />
+            <SkillIcon icon={<FaHtml5 className="text-orange-500" />} name="HTML5" />
+            <SkillIcon icon={<FaCss3Alt className="text-blue-600" />} name="CSS3" />
+            <SkillIcon icon={<FaJsSquare className="text-yellow-500" />} name="JavaScript" />
+            <SkillIcon icon={<FaReact className="text-cyan-400" />} name="React" />
+            <SkillIcon icon={<FaNodeJs className="text-green-500" />} name="Node.js" />
+            <SkillIcon icon={<SiExpress className="text-gray-400" />} name="Express" />
+            <SkillIcon icon={<SiMongodb className="text-green-600" />} name="MongoDB" />
+            <SkillIcon icon={<FaGitAlt className="text-orange-500" />} name="Git" />
+            <SkillIcon icon={<FaGithub className="text-gray-800" />} name="GitHub" />
+            <SkillIcon icon={<SiPostman className="text-orange-500" />} name="Postman" />
+            <SkillIcon icon={<SiMysql className="text-blue-500" />} name="SQL (MySQL)" />
+            <SkillIcon icon={<FaRobot className="text-purple-500" />} name="ChatGPT" />
+            <SkillIcon icon={<SiFirebase className="text-yellow-500" />} name="Firebase" />
+            <SkillIcon icon={<FaLinux className="text-black" />} name="Linux" />
           </div>
         </section>
 
+        {/* Coding Profiles */}
         <section className="mb-12">
           <h3 className="text-3xl font-bold text-center mb-8 text-black flex items-center justify-center">
             <FaLaptopCode className="mr-3 text-blue-500" /> Coding Profiles
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <ProfileCard
-              icon={<SiLeetcode className="text-yellow-500" />}
-              name="LeetCode"
-              rating="Knight | 900+ Problems"
-              link="https://leetcode.com/sourabh_1112/"
-              bgColor="bg-yellow-100"
-              shadowColor="shadow-yellow-1000"
-            />
-            <ProfileCard
-              icon={<SiCodeforces className="text-red-500" />}
-              name="Codeforces"
-              rating="Specialist | 1404"
-              link="https://codeforces.com/profile/sourabh1112"
-              bgColor="bg-red-200"
-              shadowColor="shadow-red-500"
-            />
-            <ProfileCard
-              icon={<SiCodechef className="text-yellow-600" />}
-              name="CodeChef"
-              rating="3-Star | 1685"
-              link="https://www.codechef.com/users/sourabh_1112"
-              bgColor="bg-yellow-300"
-              shadowColor="shadow-yellow-600"
-            />
-            <ProfileCard
-              icon={<FaCode className="text-gray-600" />}
-              name="AtCoder"
-              rating="8 Kyu"
-              link="https://atcoder.jp/users/sourabh_1112"
-              bgColor="bg-gray-300"
-              shadowColor="shadow-gray-500"
-            />
+            <ProfileCard icon={<SiLeetcode className="text-yellow-500" />} name="LeetCode" rating="Knight | 900+" link="https://leetcode.com/sourabh_1112/" />
+            <ProfileCard icon={<SiCodeforces className="text-red-500" />} name="Codeforces" rating="Specialist | 1404" link="https://codeforces.com/profile/sourabh1112" />
+            <ProfileCard icon={<SiCodechef className="text-yellow-600" />} name="CodeChef" rating="3-Star | 1685" link="https://www.codechef.com/users/sourabh_1112" />
+            <ProfileCard icon={<FaCode className="text-gray-600" />} name="AtCoder" rating="8 Kyu" link="https://atcoder.jp/users/sourabh_1112" />
           </div>
         </section>
 
+        {/* Soft Skills */}
         <section className="mb-12">
           <h3 className="text-3xl font-bold text-center mb-8 text-black">Soft Skills</h3>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             <SkillIcon icon={<FaComments />} name="Communication" bgColor="bg-blue-500" hoverColor="hover:bg-blue-600" />
             <SkillIcon icon={<FaBrain />} name="Critical Thinking" bgColor="bg-green-500" hoverColor="hover:bg-green-600" />
@@ -443,12 +320,33 @@ export default function About() {
         </section>
       </div>
 
+      {/* Keyframe Animations */}
       <style>{`
-        @keyframes blob { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        @keyframes blob {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.1); }
+          100% { transform: scale(1); }
+        }
         .animate-blob { animation: blob 8s infinite ease-in-out; }
-        @keyframes blob2 { 0% { transform: scale(1.1); } 50% { transform: scale(0.9); } 100% { transform: scale(1.1); } }
+
+        @keyframes blob2 {
+          0% { transform: scale(1.1); }
+          50% { transform: scale(0.9); }
+          100% { transform: scale(1.1); }
+        }
         .animate-blob2 { animation: blob2 9s infinite ease-in-out; }
+
+        @keyframes float {
+          0% { transform: translateY(0); }
+          50% { transform: translateY(-15px); }
+          100% { transform: translateY(0); }
+        }
+        .animate-float { animation: float 6s infinite ease-in-out; }
+        .animate-float2 { animation: float 7s infinite ease-in-out; }
+        .animate-float3 { animation: float 5s infinite ease-in-out; }
       `}</style>
     </div>
   );
-}
+};
+
+export default About;
