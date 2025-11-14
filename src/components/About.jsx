@@ -53,7 +53,7 @@ const About = () => {
           <h2 className="text-4xl font-bold inline border-b-4 border-gray-600 text-black">About Me</h2>
         </div>
 
-        {/* <section className="mb-12">
+        <section className="mb-12">
           <h3 className="text-3xl font-bold text-center mb-8 flex items-center justify-center text-black">
             <FaGraduationCap className="mr-3 text-blue-500" /> Education
           </h3>
@@ -70,41 +70,7 @@ const About = () => {
               </div>
             </div>
           </div>
-        </section> */}
-        <section className="mb-12">
-  <h3 className="text-3xl font-bold text-center mb-10 flex items-center justify-center text-black">
-    <FaGraduationCap className="mr-3 text-blue-500" /> Education
-  </h3>
-
-  <div className="flex justify-center">
-    <div className="w-full md:w-2/3 p-6 bg-white/20 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 cursor-pointer">
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-        {/* College Image */}
-        <img
-          src="/mnnitimage.jpg" 
-          alt="MNNIT Allahabad"
-          className="w-full md:w-1/3 rounded-xl shadow-md"
-        />
-
-        {/* Education Info */}
-        <div className="flex-1">
-          <h4 className="text-2xl md:text-3xl font-bold text-black mb-2">
-            Bachelor of Technology (B.Tech)
-          </h4>
-          <p className="text-lg text-gray-800 mb-2">
-            Electronics and Communication Engineering
-          </p>
-          <p className="font-semibold text-black mb-2">
-            Motilal Nehru National Institute of Technology (MNNIT), Allahabad
-          </p>
-          <p className="text-sm text-gray-600">2022 - 2026</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+        </section>
        <section className="mb-12">
   <h3 className="text-3xl font-bold text-center mb-8 flex items-center justify-center text-black">
     <FaCode className="mr-3 text-blue-500" /> Professional Skills
