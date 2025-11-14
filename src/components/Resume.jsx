@@ -9,7 +9,7 @@ const Resume = () => {
       <div className="max-w-[1000px] mx-auto text-center">
         {/* Heading */}
         <div className="mb-12">
-          <h2 className="text-4xl font-extrabold inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 border-b-4 border-gray-400">
+          <h2 className="text-4xl font-extrabold inline-block text-black border-b-4 border-gray-400">
             Resume
           </h2>
           <p className="py-6 text-lg text-black">
