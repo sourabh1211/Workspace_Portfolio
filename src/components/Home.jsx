@@ -19,7 +19,7 @@ const Home = () => {
             I'm Sourabh Verma
           </h1>
 
-          <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-6">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-blue-800 mb-6">
             I'm a
             <TypeAnimation
               sequence={[
