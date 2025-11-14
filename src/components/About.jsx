@@ -166,7 +166,7 @@ const About = () => {
 
         <section className="mb-12">
   <h3 className="text-3xl font-bold text-center mb-8 text-black flex items-center justify-center">
-    <FaTrophy className="mr-3 text-yellow-500" /> Achievements & Positions
+    <FaTrophy className="mr-3 text-yellow-500" /> Achievements & Positions of Resonsibilities
   </h3>
 
   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
