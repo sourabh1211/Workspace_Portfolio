@@ -215,7 +215,7 @@ const SkillIcon = ({ icon, name, bgColor = 'bg-indigo-100/50', hoverColor = 'hov
 
 const About = () => {
   return (
-    <div name="about" className="w-full min-h-screen py-20 px-4 relative overflow-hidden bg-gradient-to-bl from-purple-200 via-white to-sky-200">
+    <div name="about" className="w-full min-h-screen py-20 px-4 relative overflow-hidden bg-gradient-to-bl from-indigo-100 via-white to-sky-100">
       <div className="max-w-[1200px] mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold inline border-b-4 border-gray-600 text-black">About Me</h2>
