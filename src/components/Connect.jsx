@@ -51,45 +51,45 @@ import { FaGithub, FaLinkedin, FaInstagram, FaSnapchatGhost } from 'react-icons/
 import { HiOutlineMail } from 'react-icons/hi';
 
 const socialLinks = [
-  { id: 1, name: 'GitHub', icon: <FaGithub />, link: 'https://github.com/sourabh1211', bgColor: 'bg-gray-800', hoverColor: 'hover:bg-gray-700' },
-  { id: 2, name: 'LinkedIn', icon: <FaLinkedin />, link: 'https://linkedin.com/in/sourabh1112', bgColor: 'bg-blue-600', hoverColor: 'hover:bg-blue-500' },
-  { id: 3, name: 'Instagram', icon: <FaInstagram />, link: 'https://instagram.com/sourabh_vr', bgColor: 'bg-pink-500', hoverColor: 'hover:bg-pink-400' },
-  { id: 4, name: 'Snapchat', icon: <FaSnapchatGhost />, link: 'https://snapchat.com/add/sourabh_8482', bgColor: 'bg-yellow-400', hoverColor: 'hover:bg-yellow-300' },
-  { id: 5, name: 'Email', icon: <HiOutlineMail />, link: 'mailto:sourabhvr8482@gmail.com', bgColor: 'bg-red-500', hoverColor: 'hover:bg-red-400' },
+  { id: 1, name: 'GitHub', icon: <FaGithub />, link: 'https://github.com/sourabh1211', username: 'sourabh1211', bgColor: 'bg-gray-800', hoverColor: 'hover:bg-gray-700' },
+  { id: 2, name: 'LinkedIn', icon: <FaLinkedin />, link: 'https://linkedin.com/in/sourabh1112', username: 'sourabh1112', bgColor: 'bg-blue-600', hoverColor: 'hover:bg-blue-500' },
+  { id: 3, name: 'Instagram', icon: <FaInstagram />, link: 'https://instagram.com/sourabh_vr', username: '@sourabh_vr', bgColor: 'bg-pink-500', hoverColor: 'hover:bg-pink-400' },
+  { id: 4, name: 'Snapchat', icon: <FaSnapchatGhost />, link: 'https://snapchat.com/add/sourabh_8482', username: 'sourabh_8482', bgColor: 'bg-yellow-400', hoverColor: 'hover:bg-yellow-300' },
+  { id: 5, name: 'Email', icon: <HiOutlineMail />, link: 'mailto:sourabhvr8482@gmail.com', username: 'sourabhvr8482@gmail.com', bgColor: 'bg-red-500', hoverColor: 'hover:bg-red-400' },
 ];
 
 const Connect = () => {
   return (
     <div
       name="connect"
-      className="w-full min-h-screen flex items-center justify-center py-20 px-4 bg-gradient-to-tr from-purple-500 to-indigo-400 text-white"
+      className="w-full min-h-screen flex items-center justify-center py-20 px-4 bg-beige-100"
     >
-      <div className="max-w-[1000px] w-full flex flex-col md:flex-row items-center md:items-start gap-12">
-        {/* Profile Card */}
-        <div className="flex flex-col items-center text-center md:text-left md:items-start bg-white/20 backdrop-blur-md rounded-xl p-8 shadow-lg">
-          <img
-            src="https://avatars.githubusercontent.com/u/your-avatar.png" // Replace with your profile image
-            alt="Sourabh Verma"
-            className="w-40 h-40 rounded-full mb-6 border-4 border-white shadow-xl"
-          />
-          <h2 className="text-3xl font-bold mb-2 text-white">Sourabh Verma</h2>
-          <p className="text-lg mb-4 text-white/90">
-            Full-Stack Developer & Tech Enthusiast. Connect with me through these platforms!
+      <div className="max-w-[1000px] w-full text-center flex flex-col gap-12">
+        {/* Section Title */}
+        <div>
+          <h2 className="text-4xl font-bold inline border-b-4 border-gray-400 text-black">
+            Connect
+          </h2>
+          <p className="py-6 text-lg text-black">
+            Let's get in touch! Feel free to reach out on any of these platforms.
           </p>
         </div>
 
-        {/* Social Links */}
-        <div className="flex flex-wrap justify-center gap-6">
-          {socialLinks.map(({ id, name, icon, link, bgColor, hoverColor }) => (
+        {/* Social Cards */}
+        <div className="flex flex-col md:flex-row flex-wrap justify-center gap-6">
+          {socialLinks.map(({ id, name, icon, link, username, bgColor, hoverColor }) => (
             <a
               key={id}
               href={link}
               target="_blank"
               rel="noreferrer"
-              className={`${bgColor} ${hoverColor} transition-all duration-300 transform hover:scale-105 flex flex-col items-center justify-center w-32 h-32 rounded-xl shadow-xl`}
+              className={`${bgColor} ${hoverColor} transition-all duration-300 transform hover:scale-105 flex items-center gap-4 p-6 rounded-xl shadow-lg w-64`}
             >
-              <span className="text-5xl mb-2">{icon}</span>
-              <p className="font-semibold">{name}</p>
+              <span className="text-4xl text-white">{icon}</span>
+              <div className="text-left">
+                <p className="font-semibold text-white">{name}</p>
+                <p className="text-white/80 text-sm">{username}</p>
+              </div>
             </a>
           ))}
         </div>
