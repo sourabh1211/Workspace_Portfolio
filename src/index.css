@@ -10,8 +10,16 @@
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    
-    @apply bg-white text-blue-600; 
+
+    /* Gradient background */
+    @apply text-white; 
+    background: linear-gradient(
+      135deg,
+      #3b82f6 0%,     /* blue-500 */
+      #ffffff 33%,    /* white */
+      #6366f1 66%,    /* indigo-500 */
+      #3b82f6 100%
+    );
   }
 
   .blue-text {
