@@ -7,22 +7,30 @@ const Resume = () => {
   return (
     <div name="resume" className="w-full min-h-screen flex items-center justify-center py-20 px-4">
       <div className="max-w-[1000px] mx-auto text-center">
+        {/* Heading */}
         <div className="mb-12">
-          <h2 className="text-4xl font-bold inline border-b-4 border-gray-400 text-black">
+          <h2 className="text-4xl font-extrabold inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 border-b-4 border-gray-400">
             Resume
           </h2>
           <p className="py-6 text-lg text-black">
             View or download my resume to learn more about my professional experience.
           </p>
         </div>
+
+        {/* Download Button */}
         <a
           href={resumeUrl}
           download="YourName_Resume.pdf"
-          className="text-white group border-2 px-6 py-3 my-2 flex items-center justify-center mx-auto w-fit bg-black text-white transition-all duration-300"
+          className="relative inline-flex items-center justify-center px-8 py-3 my-2 overflow-hidden font-medium text-black transition duration-300 ease-out border-2 border-black rounded-lg shadow-lg group hover:scale-105"
         >
-          Download Resume <FaFileDownload className="ml-3" />
+          <span className="absolute w-0 h-0 transition-all duration-300 ease-out bg-black group-hover:w-full group-hover:h-full opacity-10 rounded-lg"></span>
+          <span className="relative flex items-center gap-2">
+            Download Resume <FaFileDownload className="ml-2" />
+          </span>
         </a>
-        <div className="mt-12 w-full h-[600px] rounded-lg overflow-hidden shadow-2xl">
+
+        {/* Embedded Resume */}
+        <div className="mt-12 w-full h-[600px] rounded-xl overflow-hidden shadow-2xl bg-white/20 backdrop-blur-md border border-white/30 hover:shadow-3xl transition-all duration-500">
           <iframe
             src={resumeUrl}
             title="My Resume"
